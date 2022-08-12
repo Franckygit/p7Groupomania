@@ -6,12 +6,7 @@ function App() {
             <header className="App-header">
                 <div className="Form">
                     <div className="firstHalf">
-                        <div className="logo">
-                            <img
-                                src="C:\Users\franc\OneDrive\Documents\OPC\P7\groupomania\src\images\icon-left-font.png"
-                                alt="Logo"
-                            ></img>
-                        </div>
+                        <div className="logo"></div>
                         <div className="signUpBtn">
                             <a href="#">S'inscrire</a>
                         </div>
@@ -19,27 +14,28 @@ function App() {
 
                     <div className="secondHalf">
                         <div className="signInTitle">
-                            <h2>Connexion</h2>
+                            <h2>Se connecter</h2>
                         </div>
                         <form className="login">
-                            <div class="formBox">
+                            <div className="formBox">
+                                <i class="fa-regular fa-envelope"></i>
                                 <input
                                     type="email"
-                                    class="form-control"
+                                    className="form-control"
                                     id="inputEmail"
-                                    placeholder="Adresse e-Mail"
+                                    placeholder="Votre Mail"
                                 />
                             </div>
-                            <div class="formBox">
+                            <div className="formBox">
                                 <input
                                     type="password"
-                                    class="form-control"
+                                    className="form-control"
                                     id="inputPassword"
                                     placeholder="Mot de passe"
                                 />
                             </div>
 
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" className="btn btn-primary">
                                 Connexion
                             </button>
                         </form>
