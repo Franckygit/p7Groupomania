@@ -1,48 +1,22 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import SignUp from './Components/Auth/signup'
+import LogIn from './Components/Auth/login'
+import Error from './Components/Error'
+import Home from './Components/Home'
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <div className="Form">
-                    <div className="firstHalf">
-                        <div className="logo"></div>
-                        <div className="signUpBtn">
-                            <a href="#">S'inscrire</a>
-                        </div>
-                    </div>
-
-                    <div className="secondHalf">
-                        <div className="signInTitle">
-                            <h2>Se connecter</h2>
-                        </div>
-                        <form className="login">
-                            <div className="formBox">
-                                <i class="fa-regular fa-envelope"></i>
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    id="inputEmail"
-                                    placeholder="Votre Mail"
-                                />
-                            </div>
-                            <div className="formBox">
-                                <input
-                                    type="password"
-                                    className="form-control"
-                                    id="inputPassword"
-                                    placeholder="Mot de passe"
-                                />
-                            </div>
-
-                            <button type="submit" className="btn btn-primary">
-                                Connexion
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </header>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<Home />} />
+                <Route path="*" element={<Error />} />
+                <Route path="signup" element={<SignUp />} />
+                <Route path="login" element={<LogIn />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
