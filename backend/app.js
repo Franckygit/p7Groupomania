@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const auth = require("./middleware/auth");
 const userRoutes = require("./routes/users")
-const sauceRoutes = require("./routes/sauces")
+
 const path = require("path")
 require('dotenv').config()
 

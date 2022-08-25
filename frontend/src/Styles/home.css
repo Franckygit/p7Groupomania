@@ -1,0 +1,29 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background: #ffd7d7;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.message {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    justify-content: center;
+    text-align: center;
+    color: #4e5166;
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.message p {
+    color: red;
+}

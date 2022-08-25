@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import Logo from '../../assets/Logo.png'
 import '../../Styles/navbar.css'
 
-function NavBootLogin() {
+const NavBootSite = () => {
     return (
         <>
             <Navbar bg="light" variant="light">
@@ -15,11 +15,14 @@ function NavBootLogin() {
                         Groupomania
                     </Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link as={NavLink} to="/signup">
-                            S'inscrire
+                        <Nav.Link as={NavLink} to="/accueil">
+                            Accueil
+                        </Nav.Link>
+                        <Nav.Link as={NavLink} to="/profile">
+                            Profil
                         </Nav.Link>
                         <Nav.Link as={NavLink} to="/login">
-                            Connexion
+                            Déconnexion
                         </Nav.Link>
                     </Nav>
                 </Container>
@@ -28,4 +31,4 @@ function NavBootLogin() {
     )
 }
 
-export default NavBootLogin
+export default NavBootSite
