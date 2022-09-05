@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const auth = require("./middleware/auth");
 const userRoutes = require("./routes/users")
+const postsRoutes = require("./routes/posts")
 
 const path = require("path")
 require('dotenv').config()
@@ -12,6 +13,7 @@ require('dotenv').config()
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 // ------------------------------------------------------------------------
 
 // Pour se connecter à la BDD
@@ -32,7 +34,7 @@ app.use((req, res, next) => {
 
 // Routes d'API
 app.use("/api/auth",userRoutes);
-//app.use("/api/sauces",sauceRoutes);
+app.use("/api/posts",postsRoutes);
 app.use("/images",express.static(path.join(__dirname,"images"))); //chemin statique images
 // -------------------------------------------------------------------------
 

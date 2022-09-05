@@ -3,28 +3,33 @@ import axios from 'axios'
 
 import '../../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { service } from '../Services/service'
 
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import NavBootLogin from '../Navbar/Navbar'
 import { useState } from 'react'
-//import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const LogIn = () => {
-    //let navigate = useNavigate()
+const LogIn = (req, res) => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
         axios
-            .post('http://localhost:3000/api/auth/login', email, password)
+            .post('http://localhost:3000/api/auth/login', {
+                email: email,
+                password: password,
+            })
             .then((res) => {
-                //navigate('/home')
                 console.log(res)
+                navigate('/accueil')
+                service.saveToken(res.data.token)
+                console.log('Connecté')
             })
             .catch((err) => console.log(err))
-        //console.log('Connecté sur le compte associé à :' + mail)
     }
 
     return (

@@ -8,6 +8,7 @@ import Error from './Components/Error'
 import Home from './Components/Home'
 import Accueil from './Components/Accueil'
 import Profile from './Components/Profile'
+import Guard from './Components/Auth/Guard'
 
 function App() {
     return (
@@ -17,8 +18,22 @@ function App() {
                 <Route path="*" element={<Error />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="login" element={<LogIn />} />
-                <Route path="accueil" element={<Accueil />} />
-                <Route path="profile" element={<Profile />} />
+                <Route
+                    path="accueil"
+                    element={
+                        <Guard>
+                            <Accueil />
+                        </Guard>
+                    }
+                />
+                <Route
+                    path="profile"
+                    element={
+                        <Guard>
+                            <Profile />
+                        </Guard>
+                    }
+                />
             </Routes>
         </BrowserRouter>
     )

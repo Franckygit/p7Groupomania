@@ -3,28 +3,34 @@ import axios from 'axios'
 
 import '../../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { service } from '../Services/service'
 
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import NavBootSignup from '../Navbar/NavbarSignup'
 import { useState } from 'react'
-//import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
-    //let navigate = useNavigate()
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
         axios
-            .post('http://localhost:3000/api/auth/signup', email, password)
+            .post('http://localhost:3000/api/auth/signup', {
+                email: email,
+                password: password,
+            })
             .then((res) => {
-                //navigate('/home')
                 console.log(res)
+                navigate('/accueil')
+                service.saveToken(res.data.token)
+                console.log('Compte crée')
+                console.log('Connecté')
             })
             .catch((err) => console.log(err))
-        //console.log('Connecté sur le compte associé à :' + mail)
     }
     return (
         <>
