@@ -6,7 +6,9 @@ const Axios = axios.create({
 })
 
 Axios.interceptors.request.use((request) => {
+    //console.log('Test numéro 1')
     if (service.isLogged()) {
+        //console.log('Service isLogged')
         request.headers.Authorization = 'Bearer' + service.getToken()
     }
     return request

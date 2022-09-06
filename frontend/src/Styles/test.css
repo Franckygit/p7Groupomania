@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #ffd7d7;
+    color: #4e5166;
+    font-family: 'Lato';
+}
+
+.post_container {
+    border-radius: 10px;
+    background: #fff;
+    width: 600px;
+    margin-top: 30px;
+    border: 1px solid #4e5166;
+}
+
+.post_name {
+    color: black;
+}
+
+.row-1 {
+    display: flex;
+}
+
+.first-half {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.second-half {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.row-2 {
+    margin: 10px;
+}
+
+.row-3 {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.btn_modify {
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.btn_delete {
+    border-radius: 10px;
+}
+
+.btn_like {
+    margin-right: 8px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.btn_dislike {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.post_text {
+    overflow-wrap: break-word;
+}
+
+.post_image img {
+    object-fit: fill;
+}

@@ -20,6 +20,7 @@ const Accueil = () => {
                             type="text"
                             className="text-input"
                             placeholder="Écrivez votre post ici"
+                            maxLength={280} // inspiré du système Twitter
                         ></input>
                     </div>
                     <div className="button-post">
